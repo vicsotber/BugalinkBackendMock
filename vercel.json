@@ -3,18 +3,18 @@
   "builds": [
     {
       "src": "src/index.ts",
-      "use": "@now/node",
+      "use": "@vercel/node",
       "config": {
         "includeFiles": ["src/**/*.ts"]
       }
     }
   ],
   "routes": [
-    { "src": "/", "dest": "/index.ts" },
+    { "src": "/(.*)", "dest": "/index.ts" },
     { "src": "/api/users/:userId", "dest": "/index.ts" },
     { "src": "/api/users/:driverId/reviews", "dest": "/index.ts" },
     { "src": "/users/:userId/chats/pending/count", "dest": "/index.ts" },
-    { "src": "/users/:userId/requests/pending/count", "dest": "/index.t" },
+    { "src": "/users/:userId/requests/pending/count", "dest": "/index.ts" },
     { "src": "/trips/recommendations", "dest": "/index.ts" },
     { "src": "/individualRides/:individualRideId", "dest": "/index.ts" },
     { "src": "/trips/search", "dest": "/index.ts" },
