@@ -2,25 +2,28 @@
   "version": 2,
   "builds": [
     {
-      "src": "index.ts",
-      "use": "@vercel/node"
+      "src": "src/index.ts",
+      "use": "@now/node",
+      "config": {
+        "includeFiles": ["src/**/*.ts"]
+      }
     }
   ],
   "routes": [
-  { "src": "/", "dest": "/index.ts" },
-  { "src": "/api/users/:userId", "dest": "/index.ts" },
-  { "src": "/api/users/:driverId/reviews", "dest": "/index.ts" },
-  { "src": "/users/:userId/chats/pending/count", "dest": "/index.ts" },
-  { "src": "/users/:userId/requests/pending/count", "dest": "/index.t" },
-  { "src": "/trips/recommendations", "dest": "/index.ts" },
-  { "src": "/individualRides/:individualRideId", "dest": "/index.ts" },
-  { "src": "/trips/search", "dest": "/index.ts" },
-  { "src": "/users/:userId/trips", "dest": "/index.ts" },
-  { "src": "/users/:userId/trips/upcoming", "dest": "/index.ts" },
-  { "src": "/users/:userId/trips/history", "dest": "/index.ts" },
-  { "src": "/users/:userId/routines", "dest": "/index.ts" }
+    { "src": "/", "dest": "/index.ts" },
+    { "src": "/api/users/:userId", "dest": "/index.ts" },
+    { "src": "/api/users/:driverId/reviews", "dest": "/index.ts" },
+    { "src": "/users/:userId/chats/pending/count", "dest": "/index.ts" },
+    { "src": "/users/:userId/requests/pending/count", "dest": "/index.t" },
+    { "src": "/trips/recommendations", "dest": "/index.ts" },
+    { "src": "/individualRides/:individualRideId", "dest": "/index.ts" },
+    { "src": "/trips/search", "dest": "/index.ts" },
+    { "src": "/users/:userId/trips", "dest": "/index.ts" },
+    { "src": "/users/:userId/trips/upcoming", "dest": "/index.ts" },
+    { "src": "/users/:userId/trips/history", "dest": "/index.ts" },
+    { "src": "/users/:userId/routines", "dest": "/index.ts" }
   ],
   "env": {
-    "TS_NODE_PROJECT": "./tsconfig.json"
+    "NODE_ENV": "production"
   }
 }
